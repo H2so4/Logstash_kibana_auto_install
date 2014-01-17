@@ -18,7 +18,7 @@ sysctl -p
 /etc/init.d/redis-server restart
 
 # Install and configure elasticsearch
-wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.1.deb -O /tmp/elasticsearch.deb
+wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.10.deb -O /tmp/elasticsearch.deb
 dpkg -i /tmp/elasticsearch.deb
 rm /tmp/elasticsearch.deb
 
@@ -31,7 +31,7 @@ cp $ROOT/default/elasticsearch /etc/default/elasticsearch
 # Logstash is just a jar and requires some additional configs
 LOGHOME=/etc/logstash
 mkdir $LOGHOME && pushd $LOGHOME
-wget https://logstash.objects.dreamhost.com/release/logstash-1.1.13-flatjar.jar -O logstash.jar
+wget https://logstash.objects.dreamhost.com/release/logstash-1.3.2-flatjar.jar -O logstash.jar
 cp $ROOT/conf/indexer.conf .
 cp $ROOT/init/logstash.conf /etc/init/
 mkdir /var/lib/logstash # Required working directory for logstash
