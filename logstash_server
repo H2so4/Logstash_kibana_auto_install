@@ -30,7 +30,8 @@ cp $ROOT/default/elasticsearch /etc/default/elasticsearch
 
 # Logstash is just a jar and requires some additional configs
 LOGHOME=/etc/logstash
-mkdir $LOGHOME && pushd $LOGHOME
+mkdir $LOGHOME
+pushd $LOGHOME
 wget https://download.elasticsearch.org/logstash/logstash/logstash-1.3.2-flatjar.jar -O logstash.jar
 cp $ROOT/conf/indexer.conf .
 cp $ROOT/init/logstash.conf /etc/init/
